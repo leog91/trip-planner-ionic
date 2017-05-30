@@ -1,0 +1,33 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h2>history tab</h2>
+    <p></p>
+    <button class="button button-block button-positive" ng-click="showAll()">
+              Show All
+            </button>
+
+
+ <div class="row">
+  <div class="col"> Name</div>
+  <div class="col"> Category</div>
+  <div class="col"> Currency</div>
+  <div class="col"> Amount</div>
+ 
+</div>
+
+
+  <ion-item collection-repeat="item in items">
+
+ <div class="row">
+  <div class="col"> {{item.name}}</div>
+  <div class="col"> {{item.category}}</div>
+  <div class="col"> {{item.currency}}</div>
+  <div class="col"> {{item.ammount}}</div>
+ 
+</div>
+ 
+  </ion-item>
+
+
+  </ion-content>
+</ion-view>
