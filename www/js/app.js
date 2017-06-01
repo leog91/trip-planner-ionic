@@ -30,12 +30,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   */
 
   .config(function ($ionicCloudProvider) {
+
     $ionicCloudProvider.init({
       "core": {
         "app_id": "fa29f981"
       }
-    });
+      /*,
+      "auth": {
+        "google": {
+          "webClientId": "15090035877-h3c92ambrt0b7fk31ksfubkedr3faor3.apps.googleusercontent.com",
+          "scope": ["permission1", "permission2"]
+        }
+      }
+*/
+
+    })
   })
+
+
 
 
 

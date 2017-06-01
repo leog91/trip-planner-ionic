@@ -6,20 +6,20 @@ angular.module('starter.controllers', [])
 
   .controller('HistoryCtrl', function ($scope, $stateParams, apiService, userService) {
     //
-  
-        $scope.showAll = function () {
-            apiService.getItems().then(function (response) {
-                var jsonBundle = response.data;
-                $scope.items = jsonBundle;
-            },
-                function (error) {
-                    console.log("getBundleFail");
-                });
-        };
+
+    $scope.showAll = function () {
+      apiService.getItems().then(function (response) {
+        var jsonBundle = response.data;
+        $scope.items = jsonBundle;
+      },
+        function (error) {
+          console.log("getBundleFail");
+        });
+    };
 
 
 
-})
+  })
 
 
 
@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
 
 
 
-  .controller('LoginCtrl', function ($scope, $state, $rootScope, userService, apiService, $ionicAuth, $ionicUser) {
+  .controller('LoginCtrl', function ($scope, $state, $rootScope, userService, apiService, $ionicGoogleAuth, $ionicUser) {
 
 
 
@@ -92,9 +92,21 @@ angular.module('starter.controllers', [])
 
     $scope.signIn = function () {
 
-      $ionicAuth.login('google');
-     // console.log($ionicUser.social.google.data.email);
+
+
+      //      $ionicAuth.login('google');
+
+      $ionicGoogleAuth.login().then(function (response) {
+        console.log('Sign-In ok');
         $state.go('tab.dash');
+      }, function (error) {
+        console.log('Sign-In fail');
+      });
+
+
+
+      //console.log($ionicUser.social.google.data.email);
+      $state.go('tab.dash');
 
       /*.then(function (response) {
         console.log('Sign-In ok');
