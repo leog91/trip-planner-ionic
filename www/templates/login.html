@@ -1,4 +1,6 @@
 <ion-view view-title="Login">
+
+
     <ion-content>
         <div class="padding">
             <button class="button button-block button-positive" ng-click="signIn()">
@@ -8,10 +10,23 @@
 
             <button class="btn  btn-danger btn-raised btn-block" g-login type="button">Google Login</button>
 
+            <ion-card *ngIf="userData">
+                <ion-card-content>
+                    <!--<img class="profile-img" [hidden]="!userData" [src]="userData.imageUrl" />
+-->
+                        <img src="userData.imageUrl">
 
+                    <h1>{{userData.displayName}}</h1>
+                    <p>{{userData.email}}</p>
+                </ion-card-content>
+            </ion-card>
             <p class="text-center">
                 <a href="#/forgot-password">Forgot password</a>
             </p>
         </div>
     </ion-content>
+
+
+
+
 </ion-view>

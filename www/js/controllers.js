@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
 
 
 
-  .controller('LoginCtrl', function ($scope, $state, $rootScope, userService, apiService, $ionicGoogleAuth, $ionicUser) {
+  .controller('LoginCtrl', function ($scope, $state, $rootScope, userService, $cordovaGooglePlus, apiService, $ionicGoogleAuth, $ionicUser) {
 
 
 
@@ -91,22 +91,34 @@ angular.module('starter.controllers', [])
 
 
     $scope.signIn = function () {
-
-
+      {
+        $cordovaGooglePlus.login({})
+          .then(function (res) {
+            console.log('good');
+            $scope.userData = res
+            $state.go('tab.dash');
+          }, function (err) {
+            console.log('error');
+            console.log(err);
+          });
+      };
+      // $state.go('tab.dash');
 
       //      $ionicAuth.login('google');
 
-      $ionicGoogleAuth.login().then(function (response) {
-        console.log('Sign-In ok');
-        $state.go('tab.dash');
-      }, function (error) {
-        console.log('Sign-In fail');
-      });
 
+      /*
+            $ionicGoogleAuth.login().then(function (response) {
+              console.log('Sign-In ok');
+              $state.go('tab.dash');
+            }, function (error) {
+              console.log('Sign-In fail');
+            });
+      */
 
 
       //console.log($ionicUser.social.google.data.email);
-      $state.go('tab.dash');
+      //   $state.go('tab.dash');
 
       /*.then(function (response) {
         console.log('Sign-In ok');
