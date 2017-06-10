@@ -1,0 +1,55 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <h2>Add Item</h2>
+        <p></p>
+
+
+
+
+
+
+        <div class="list">
+            <label class="item item-input item-floating-label">
+    <span class="input-label">Name</span>
+    <input ng-model="name" type="text" placeholder="Name">
+  </label>
+            <label class="item item-input item-floating-label">
+    <span class="input-label">Price</span>
+    <input ng-model="ammount" type="number" placeholder="Price">
+  </label>
+
+        </div>
+
+        <div class="list">
+
+            <label class="item item-input item-select">
+    <div class="input-label">
+      Category
+    </div>
+    <select ng-model="category">
+      <option ng-repeat="category in categories" >{{category}}</option>
+    </select>
+  </label>
+
+        </div>
+
+        <!--        {{category}}
+
+{{name}}
+
+{{ammount}}
+{{myDate}}
+-->
+        <input ng-model="myDate" type="date">
+
+
+
+        <button class="button button-block button-positive" ng-click="saveItem()">
+              Add
+            </button>
+
+
+
+
+    </ion-content>
+</ion-view>
