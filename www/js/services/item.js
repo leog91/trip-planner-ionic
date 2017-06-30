@@ -5,7 +5,7 @@
 'use strict';
 
 angular.module('starter')
-    .service('item', function (validator, userService, Flash, apiService) {
+    .service('item', function (validator, userService, apiService) {
 
         var item = {
             name: "",
@@ -68,13 +68,13 @@ angular.module('starter')
                     apiService.saveItem(item, item.date)
                         .then(function (response) {
                             console.log("addItem OK");
-                            var message = '<strong>Well done!</strong>Item added  successfully.';
-                            Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                            // var message = '<strong>Well done!</strong>Item added  successfully.';
+                            //Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                         },
                         function (error) {
                             console.log("addItem Fail");
-                            var message = '<strong>Ups!</strong> Try again.';
-                            Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                            //var message = '<strong>Ups!</strong> Try again.';
+                            //Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                         });
                 }
             },
@@ -140,12 +140,12 @@ angular.module('starter')
                 if (this.isValid()) {
                     apiService.updateItem(item, item.date, idd)
                         .then(function (response) {
-                            var message = '<strong>Well done!</strong> Item  edited successfully.';
-                            Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                            //   var message = '<strong>Well done!</strong> Item  edited successfully.';
+                            //   Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                         },
                         function (error) {
-                            var message = '<strong>Ups!</strong> Try again.';
-                            Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                            //    var message = '<strong>Ups!</strong> Try again.';
+                            //     Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                         });
                 }
             },

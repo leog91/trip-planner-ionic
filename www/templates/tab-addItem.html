@@ -1,28 +1,28 @@
 <ion-view view-title="Dashboard">
-    <ion-content class="padding">
-        <h2>Add Item</h2>
-        <p></p>
+  <ion-content class="padding">
+    <h2>Add Item</h2>
+    <p></p>
 
 
 
 
 
 
-        <div class="list">
-            <label class="item item-input item-floating-label">
+    <div class="list">
+      <label class="item item-input item-floating-label">
     <span class="input-label">Name</span>
-    <input ng-model="name" type="text" placeholder="Name">
+    <input ng-model="item.name" type="text" placeholder="Name">
   </label>
-            <label class="item item-input item-floating-label">
+      <label class="item item-input item-floating-label">
     <span class="input-label">Price</span>
-    <input ng-model="ammount" type="number" placeholder="Price">
+    <input ng-model="item.ammount" type="number" placeholder="Price">
   </label>
 
-        </div>
+    </div>
 
-        <div class="list">
+    <div class="list">
 
-            <label class="item item-input item-select">
+      <label class="item item-input item-select">
     <div class="input-label">
       Category
     </div>
@@ -31,25 +31,25 @@
     </select>
   </label>
 
-        </div>
+    </div>
 
-        <!--        {{category}}
+    <!--        {{category}}
 
 {{name}}
 
 {{ammount}}
 {{myDate}}
 -->
-        <input ng-model="myDate" type="date">
+    <input ng-model="myDate" type="date">
 
 
 
-        <button class="button button-block button-positive" ng-click="saveItem()">
+    <button class="button button-block button-positive" ng-click="saveItem()">
               Add
             </button>
 
 
 
 
-    </ion-content>
+  </ion-content>
 </ion-view>

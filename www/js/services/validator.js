@@ -5,7 +5,7 @@
 'use strict';
 
 angular.module('starter')
-    .service('validator', function (Flash) {
+    .service('validator', function () {
 
 
         return {
@@ -47,8 +47,8 @@ angular.module('starter')
                     console.log("checkNullTrue");
                     return true;
                 } else {
-                    var message = '<strong>Ups!</strong>' + msg + ' must be atleast 2 char long .';
-                    Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                    // var message = '<strong>Ups!</strong>' + msg + ' must be atleast 2 char long .';
+                    //   Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                     return false;
                 }
             },
@@ -60,8 +60,8 @@ angular.module('starter')
                     return true;
                 } else {
                     console.log(3);
-                    var message = '<strong>Ups!</strong>' + msg + ' must be atleast 2 char long .';
-                    Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                    //  var message = '<strong>Ups!</strong>' + msg + ' must be atleast 2 char long .';
+                    // Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                     return false;
                 }
             },
@@ -70,8 +70,8 @@ angular.module('starter')
                 if ((price != null)) {
                     return true;
                 } else {
-                    var message = '<strong>Ups!</strong>' + msg + ' must have a value .';
-                    Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                    //  var message = '<strong>Ups!</strong>' + msg + ' must have a value .';
+                    // Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                     return false;
                 }
             },
@@ -81,8 +81,8 @@ angular.module('starter')
                 if (date1 <= date2) {
                     return true;
                 } else {
-                    var message = '<strong>Ups!</strong> Date range is invalid .';
-                    Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+                    // var message = '<strong>Ups!</strong> Date range is invalid .';
+                    // Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
                     return false;
                 }
             }

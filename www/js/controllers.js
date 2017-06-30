@@ -3,24 +3,24 @@ angular.module('starter.controllers', [])
   .controller('DashCtrl', function ($scope) { })
 
 
-/*
-  .controller('HistoryCtrl', function ($scope, $stateParams, apiService, userService) {
-    //
-
-    $scope.showAll = function () {
-      apiService.getItems().then(function (response) {
-        var jsonBundle = response.data;
-        $scope.items = jsonBundle;
-      },
-        function (error) {
-          console.log("getBundleFail");
-        });
-    };
-
-
-
-  })
-*/
+  /*
+    .controller('HistoryCtrl', function ($scope, $stateParams, apiService, userService) {
+      //
+  
+      $scope.showAll = function () {
+        apiService.getItems().then(function (response) {
+          var jsonBundle = response.data;
+          $scope.items = jsonBundle;
+        },
+          function (error) {
+            console.log("getBundleFail");
+          });
+      };
+  
+  
+  
+    })
+  */
 
 
 
@@ -132,52 +132,52 @@ angular.module('starter.controllers', [])
 
   })
 
-
-
-  .controller('AddItemCtrl', function ($scope, apiService) {
-
-    $scope.categories = [
-      "General",
-      "Food",
-      "Lodging"
-    ];
-
-
-    $scope.item = {
-      name: "",
-    }
-
-    $scope.myDate = new Date();
-    $scope.name = "nonmbre"
-    $scope.category = "categ"
-    $scope.ammount = 0;
-
-
-    $scope.saveItem = function () {
-      $scope.item.category = $scope.category;
-      $scope.item.name = $scope.name;
-      $scope.item.ammount = $scope.ammount;
-      $scope.item.currency = "ARS";
-      console.log("fn test");
-
-      apiService.saveItem($scope.item, $scope.myDate)
-        .then(function (response) {
-          console.log("addItem OK");
-          // var message = '<strong>Well done!</strong>Item added  successfully.';
-          //Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
-        },
-        function (error) {
-          //console.log("addItem Fail");
-          //var message = '<strong>Ups!</strong> Try again.';
-          //Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
-        });
-      console.log($scope.item);
-    }
-
-
-
-  })
-
+  /*
+  
+    .controller('AddItemCtrl', function ($scope, apiService) {
+  
+      $scope.categories = [
+        "General",
+        "Food",
+        "Lodging"
+      ];
+  
+  
+      $scope.item = {
+        name: "",
+      }
+  
+      $scope.myDate = new Date();
+      $scope.name = "nonmbre"
+      $scope.category = "categ"
+      $scope.ammount = 0;
+  
+  
+      $scope.saveItem = function () {
+        $scope.item.category = $scope.category;
+        $scope.item.name = $scope.name;
+        $scope.item.ammount = $scope.ammount;
+        $scope.item.currency = "ARS";
+        console.log("fn test");
+  
+        apiService.saveItem($scope.item, $scope.myDate)
+          .then(function (response) {
+            console.log("addItem OK");
+            // var message = '<strong>Well done!</strong>Item added  successfully.';
+            //Flash.create('success', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+          },
+          function (error) {
+            //console.log("addItem Fail");
+            //var message = '<strong>Ups!</strong> Try again.';
+            //Flash.create('danger', message, 4000, { class: 'custom-class', id: 'custom-id' }, true);
+          });
+        console.log($scope.item);
+      }
+  
+  
+  
+    })
+  */
 
 
   .controller('AccountCtrl', function ($scope) {

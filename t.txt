@@ -1,3 +1,11 @@
+ionic run android
+
+ionic serve
+
+
+
+
+
 
 npm install
 
