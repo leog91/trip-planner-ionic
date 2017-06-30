@@ -56,7 +56,7 @@ angular.module('starter')
                 //var userNameWithoutMail = userService.getEmail().slice(0, userService.getEmail().indexOf("@"));
                 //email = user.email;
                 email = user.email.slice(0, user.email.indexOf("@"));
-                name = user.name;
+                name = user.displayName;
                 imageUrl = user.imageUrl;
                 isLogged = true;
             },
