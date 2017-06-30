@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 
-
+/*
 
   .service('userService', function () {
 
@@ -357,7 +357,7 @@ angular.module('starter.services', [])
 
     };
   })
-
+*/
 
 
 

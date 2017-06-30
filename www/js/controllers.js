@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
   .controller('DashCtrl', function ($scope) { })
 
 
-
+/*
   .controller('HistoryCtrl', function ($scope, $stateParams, apiService, userService) {
     //
 
@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
 
 
   })
-
+*/
 
 
 
