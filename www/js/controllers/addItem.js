@@ -8,6 +8,8 @@ angular.module('starter')
 
         $scope.isEdit = item.getIsEdit();
         $scope.isAdd = !(item.getIsEdit());
+        //
+        $scope.test = userService.getProfile();
 
         $scope.item = {};
 

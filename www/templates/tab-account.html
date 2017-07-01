@@ -1,9 +1,73 @@
 <ion-view view-title="Account">
   <ion-content>
+
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
+
+
+      <h1> {{name}}</h1>
+
+
+      <div class="list">
+
+
+
+        <label class="item item-input item-select">
+    <div class="input-label">
+      Country
+    </div>
+    <select ng-model="country">
+      <option ng-repeat="country in countries" value="{{country.code}}">{{country.name}}</option>
+    </select>
+  </label>
+
+      </div>
+
+      <h2>Current Currency: {{country}}</h2>
+
+      <button class="button button-block button-positive" ng-click="saveSettings()">
+              Save Settings
+            </button>
+
+
+      <!--
+
+      <h2> Personal Categories </h2>
+
+      {{category}}
+
+
+      <ion-item collection-repeat="c in categories">
+
+        <div class="row">
+          <div class="col"> {{c}}</div>
+          <div class="col"> <button class="button  button-positive" ng-click="deleteCategory($index)">
+              delete
+            </button>
+          </div>
+
+        </div>
+
+      </ion-item>
+
+
+      <label class="item item-input item-floating-label">
+    <span class="input-label">Category</span>
+    <input ng-model="category" type="text" placeholder="Category">
+  </label>
+
+
+      <button class="button button-block button-positive" ng-click="addCategory()">
+              Add Category
+            </button>
+
+-->
+
+
+      <!--
+      <ion-toggle ng-model="settings.enableFriends">
         Enable Friends
-    </ion-toggle>
+      </ion-toggle>-->
+
     </ion-list>
   </ion-content>
 </ion-view>

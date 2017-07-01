@@ -28,8 +28,18 @@ angular.module('starter')
 
         //var hasHistory = false;
 
+        var test = {};
+
 
         return {
+
+            setTest: function (t) {
+                test = t;
+            },
+
+            getTest: function () {
+                return test;
+            },
 
             setProfile: function (user) {
                 profile = user;
@@ -39,7 +49,7 @@ angular.module('starter')
                 return profile;
             },
 
-            clearHistory: function(){
+            clearHistory: function () {
                 history = {};
             },
 
