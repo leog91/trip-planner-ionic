@@ -7,7 +7,6 @@ angular.module('starter')
 
         var auth = {};
 
-        //var country = userService.getProfile().currentCurrency;
 
         var bundle = {};
 
@@ -23,17 +22,17 @@ angular.module('starter')
             },
 
 
-            saveItem: function (item, date) {
+            saveItem: function (item) {
                 return $http({
                     method: 'get',
-                    url: this.url() + "item/add/" + userService.getEmail() + "/" + this.dateUrl(date) + this.itemUrl(item) + "/" + currentGroupSize
+                    url: this.url() + "item/add/" + userService.getEmail() + "/" + this.dateUrl(item.date) + this.itemUrl(item) + "/" + currentGroupSize
                 });
             },
 
-            updateItem: function (item, date, id) {
+            updateItem: function (item) {
                 return $http({
                     method: 'get',
-                    url: this.url() + "item/update/" + id + "/" + userService.getEmail() + "/" + this.dateUrl(date) + this.itemUrl(item) + "/" + currentGroupSize
+                    url: this.url() + "item/update/" + item.id + "/" + userService.getEmail() + "/" + this.dateUrl(item.date) + this.itemUrl(item) + "/" + currentGroupSize
                 });
             },
 
@@ -189,6 +188,23 @@ angular.module('starter')
                     url: this.url() + "trip/delete/" + id
                 });
             },
+
+
+            setRatio: function (dateFrom, dateTo, codeFrom, codeTo, ratio) {
+                return $http({
+                    method: 'get',
+                    url: this.url() + "currency/adds/" + this.dateUrl(dateFrom) + this.dateUrl(dateTo) + ratio + "/" + codeFrom + "/" + codeTo
+                });
+            },
+
+
+            getRatio: function (date, codeFrom, codeTo) {
+                return $http({
+                    method: 'get',
+                    url: this.url() + "currency/coeff/" + codeFrom + "/" + codeTo + "/" + this.dateUrl(date)
+                });
+            },
+
 
         };
     });

@@ -9,37 +9,27 @@ angular.module('starter')
 
         var auth = {};
 
-        //var country = "ARS";
-
         var bundle = {};
 
-        var email = "leog91";
+        var email = "";
 
         var name = "";
 
         var imageUrl = "";
 
-        //m
         var profile = {};
 
         var isLogged = false;
 
         var history = {};
 
-        //var hasHistory = false;
+        var dateFrom = null;
+        var dateTo = null;
 
-        var test = {};
+        var hasTrip = false;
 
 
         return {
-
-            setTest: function (t) {
-                test = t;
-            },
-
-            getTest: function () {
-                return test;
-            },
 
             setProfile: function (user) {
                 profile = user;
@@ -51,10 +41,18 @@ angular.module('starter')
 
             clearHistory: function () {
                 history = {};
+                hasTrip = false;
+                dateFrom = null;
+                dateTo = null;
             },
 
             setHistory: function (items) {
                 history = items;
+                hasTrip = true;
+            },
+
+            hasTrip: function () {
+                return hasTrip;
             },
 
             getHistory: function () {
@@ -62,18 +60,24 @@ angular.module('starter')
             },
 
 
+            setHistoryDates: function (dateFFrom, dateTTo) {
+                var plusOne = new Date(dateFFrom);
+                plusOne.setDate(plusOne.getDate() + 1);
+                dateFrom = plusOne;
+
+                plusOne = new Date(dateTTo);
+                plusOne.setDate(plusOne.getDate() + 1);
+                dateTo = plusOne;
+            },
+
+
             setUser: function (user) {
-                //var userNameWithoutMail = userService.getEmail().slice(0, userService.getEmail().indexOf("@"));
-                //email = user.email;
                 email = user.email.slice(0, user.email.indexOf("@"));
-                name = user.displayName;
+                name = user.name;
                 imageUrl = user.imageUrl;
                 isLogged = true;
             },
 
-
-
-            //removeU
 
             getEmail: function () {
                 return email;
@@ -87,6 +91,14 @@ angular.module('starter')
                 return imageUrl;
             },
 
+
+            getDateFrom: function () {
+                return dateFrom;
+            },
+
+            getDateTo: function () {
+                return dateTo;
+            },
             setCountry: function (newCountry) {
                 country = newCountry;
             },

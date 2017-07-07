@@ -3,38 +3,30 @@
 'use strict';
 
 angular.module('starter')
-    .controller('AddItemCtrl', function ($scope, userService, apiService, item) {
+    .controller('AddItemCtrl', function ($scope, userService, apiService, $timeout, itemService) {
 
 
-        $scope.isEdit = item.getIsEdit();
-        $scope.isAdd = !(item.getIsEdit());
-        //
-        $scope.test = userService.getProfile();
+        $scope.isEdit = itemService.getIsEdit();
+        $scope.isAdd = !(itemService.getIsEdit());
 
         $scope.item = {};
 
-        var itemId;
-        apiService.getProfile().then(function (response) {
-            $scope.item = item.get();
-            var itemId = item.getId();
-            $scope.category = item.get().category;
-            $scope.myDate = item.get().date;
 
+        apiService.getProfile().then(function (response) {
+            $scope.item = itemService.get();
         }, function (error) {
             console.log("conection error");
         });
 
-        item.clear();
-        item.clearEdit();
+        itemService.clear();
+        itemService.clearEdit();
 
         $scope.saveItem = function () {
-            $scope.item.category = $scope.category;
-            item.save($scope.item, $scope.myDate);
+            itemService.save($scope.item);
         }
 
         $scope.updateItem = function () {
-            $scope.item.category = $scope.category;
-            item.update($scope.item, $scope.myDate, $scope.item.id);
+            itemService.update($scope.item);
         }
 
         $scope.preset = [
@@ -47,7 +39,5 @@ angular.module('starter')
 
 
 
-
     });
-
 

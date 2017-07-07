@@ -26,10 +26,7 @@
 
       <button class="button button-block button-positive" ng-click="saveSettings()">
               Save Settings
-            </button>
-
-
-      <!--
+            </button> --
 
       <h2> Personal Categories </h2>
 
@@ -40,27 +37,36 @@
 
         <div class="row">
           <div class="col"> {{c}}</div>
-          <div class="col"> <button class="button  button-positive" ng-click="deleteCategory($index)">
-              delete
-            </button>
-          </div>
+
+        </div>
 
         </div>
 
       </ion-item>
 
-
+      <!--
       <label class="item item-input item-floating-label">
     <span class="input-label">Category</span>
     <input ng-model="category" type="text" placeholder="Category">
   </label>
-
+-->
 
       <button class="button button-block button-positive" ng-click="addCategory()">
               Add Category
             </button>
 
--->
+
+
+      <div class="list">
+        <label class="item item-input item-floating-label">
+    <span class="input-label">Category</span>
+    <input ng-model="category" type="text" placeholder="Category">
+  </label>
+
+      </div>
+
+
+
 
 
       <!--
